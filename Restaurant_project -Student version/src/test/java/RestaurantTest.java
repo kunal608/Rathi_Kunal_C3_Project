@@ -47,6 +47,12 @@ class RestaurantTest {
         order.remove(1);
         assertEquals(total-afterTotal,restaurant.getOrderValue(order));
     }
+    @Test
+    public void for_order_value_selected_item_not_existed_in_menu_should_throw_exception() throws itemNotFoundException {
+        //WRITE UNIT TEST CASE HERE
+        assertThrows(itemNotFoundException.class,()->restaurant.findItemByName("Some Invalid Name"));
+
+    }
 
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
